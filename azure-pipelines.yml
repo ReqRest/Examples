@@ -43,15 +43,14 @@ steps:
   inputs:
     command: 'build'
     projects: '**/*.csproj'
-    configuration: $(BuildConfiguration)
+    arguments: '--configuration $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: 'Test'
   inputs:
     command: 'test'
     projects: '**/*.csproj'
-    configuration: $(BuildConfiguration)
-    nobuild: true
+    arguments: '--configuration $(BuildConfiguration) --no-build'
 
 - script: InheritDoc -o
   displayName: 'Run InheritDoc'
@@ -61,8 +60,7 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
-    configuration: $(BuildConfiguration)
-    nobuild: true
+    arguments: '--configuration $(BuildConfiguration) --no-build'
     versioningScheme: 'off'
   condition: |
     and
