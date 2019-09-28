@@ -80,8 +80,8 @@ client.Todos().Get(start: 5, limit: 20);
 > This project is supposed to show the best practices when using ReqRest. Keep this in mind when
 > look at the source code. At some places, especially in the `/Interfaces` folder, the required
 > amount of code could be reduced by quite a lot.
-> It would, however, be harder to understand when getting started with ReqRest, hence it is written
-> the way it is.
+> It would, however, make the code harder to understand when getting started with ReqRest, 
+> hence it is written the way it is.
 
 Before having a look at the client's code, be sure that you have gone through the [Getting Started guides](https://reqrest.github.io/articles/getting-started).
 These guides explain in detail how ReqRest's core features works. Understanding these makes most
