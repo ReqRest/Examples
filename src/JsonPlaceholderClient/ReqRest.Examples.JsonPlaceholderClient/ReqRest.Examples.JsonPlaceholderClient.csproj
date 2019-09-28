@@ -1,10 +1,20 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>
+This package provides a fully fledged REST API client implementation using ReqRest for the JSON Placeholder API available at https://jsonplaceholder.typicode.com (made available by GitHub user typicode).
+
+The client is created and used for demonstration purposes. It allows you to see how a REST API client can be created with ReqRest and how it can ultimately be used. Since the REST API is, at the end of the day, just a service for fake data, this package is most likely not going to be suitable for any production usage.
+
+You can learn more about ReqRest at the GitHub page (https://github.com/ReqRest/ReqRest) and in the official documentation (https://reqrest.github.io).
+
+You can find detailed information about this package at the GitHub repository: https://github.com/ReqRest/Examples
+The repository contains both the commented source code and information about what functions the client supports.
+    </Description>
     
     <IsPackable>true</IsPackable>
-    <Version Condition=" $(Version) == '' ">1.0.0</Version>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

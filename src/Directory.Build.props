@@ -3,7 +3,7 @@
   <PropertyGroup>
     <LangVersion>8.0</LangVersion>
     <Nullable>enable</Nullable>
-    <CodeAnalysisRuleSet>../CA.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>../../CA.ruleset</CodeAnalysisRuleSet>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
 
