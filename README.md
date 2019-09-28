@@ -17,7 +17,7 @@ Please note that examples with a `ReadMe` link below their name have a more deta
 in another README file.
 
 
-### JsonPlaceholderClient [![Nuget](https://img.shields.io/nuget/v/ReqRest.Examples.JsonPlaceholderClient)](https://www.nuget.org/packages/ReqRest.Examples.JsonPlaceholderClient)
+### :page_facing_up: JsonPlaceholderClient [![Nuget](https://img.shields.io/nuget/v/ReqRest.Examples.JsonPlaceholderClient)](https://www.nuget.org/packages/ReqRest.Examples.JsonPlaceholderClient)
 
 [ReadMe](./src/JsonPlaceholderClient) | [NuGet](https://www.nuget.org/packages/ReqRest.Examples.JsonPlaceholderClient)
 
