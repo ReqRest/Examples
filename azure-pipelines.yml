@@ -16,6 +16,12 @@ steps:
     packageType: 'sdk'
     version: '3.0.x'
 
+- task: DotNetCoreInstaller@1
+  displayName: 'Install .NET Core 2.2'
+  inputs:
+    packageType: 'sdk'
+    version: '2.2.x'
+
 # InheritDocTool requires .NET Core 2.1.
 - task: DotNetCoreInstaller@1
   displayName: 'Install .NET Core 2.1'
