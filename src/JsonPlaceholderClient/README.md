@@ -76,7 +76,7 @@ client.Todos().Get(start: 5, limit: 20);
 
 ## Understanding the Code
 
-> :information_source: **Note:**
+> :information_source: **Note:** <br/>
 > This project is supposed to show the best practices when using ReqRest. Keep this in mind when
 > look at the source code. At some places, especially in the `/Interfaces` folder, the required
 > amount of code could be reduced by quite a lot.
