@@ -73,7 +73,7 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: $(Build.ArtifactStagingDirectory)
-    ArtifactName: 'Publish NuGet Artifacts'
+    ArtifactName: 'NuGet Packages'
   condition: |
     and
     (
