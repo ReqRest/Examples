@@ -1,0 +1,40 @@
+<Project>
+
+  <PropertyGroup>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <CodeAnalysisRuleSet>../CA.ruleset</CodeAnalysisRuleSet>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+
+    <!-- The examples shouldn't be packed by default, even though there are some exceptions.
+         Still do an opt-in for security.
+         Furthermore, the metadata below is shared between every single example project. -->
+    <IsPackable>false</IsPackable>
+    <Authors>Manuel Römer</Authors>
+    <NeutralLanguage>en</NeutralLanguage>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/ReqRest/Examples</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/ReqRest/Examples</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition=" $(Configuration) == 'Release' ">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" !$(MSBuildProjectName.Contains('Test')) ">
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.4" PrivateAssets="all" />
+  </ItemGroup>
+
+  <PropertyGroup Condition=" $(MSBuildProjectName.Contains('Test')) ">
+    <Nullable>disable</Nullable>
+    <!-- Certain warnings make no sense in test projects. -->
+    <NoWarn>
+      $(NoWarn);
+      CS1573; <!-- No matching XML comment for parameter. -->
+      CA2007; <!-- ConfigureAwait(false) leads to cluttered tests. -->
+    </NoWarn>
+  </PropertyGroup>
+  
+</Project>
