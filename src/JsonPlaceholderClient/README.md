@@ -67,6 +67,12 @@ client.Users(123).Posts();
 client.Users(123).Albums();
 ```
 
+Some requests support optional parameters, for example:
+
+```csharp
+client.Todos().Get(start: 5, limit: 20);
+```
+
 
 ## Understanding the Code
 
