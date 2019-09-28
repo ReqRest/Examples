@@ -93,7 +93,7 @@ details about why an implementation was done the way it is.
 A good way to get started with the code is to look at the following files, in order:
 
 * `JsonPlaceholderClient.cs` <br/>
-  _Lists all the available interfaces and shows how a `RestClientConfiguration` is ideally used.`_
+  _Lists all the available interfaces and shows how a `RestClientConfiguration` is ideally used._
 * `Interfaces/SingleResourceRestInterface.cs` <br/>
   _Defines all possible requests against interfaces with an ID in the URL, e.g. `/todos/123`._
 * `Interfaces/MultiResourceRestInterface.cs` <br/>
