@@ -1,4 +1,4 @@
-ReqRest Examples
+# ReqRest Examples
 
 _Example and demo projects for the [ReqRest](https://github.com/ReqRest/ReqRest) library._
 

@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Config", ".Config", "{CB5C3D71-ABDA-4EAD-9D5C-2D7477CE90EC}"
+	ProjectSection(SolutionItems) = preProject
+		..\.editorconfig = ..\.editorconfig
+		..\.gitignore = ..\.gitignore
+		CA.ruleset = CA.ruleset
+		Directory.Build.props = Directory.Build.props
+		nuget.config = nuget.config
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JsonPlaceholderClient", "JsonPlaceholderClient", "{0702489A-6786-4BF3-BA7A-36BE99263D1D}"
+	ProjectSection(SolutionItems) = preProject
+		JsonPlaceholderClient\README.md = JsonPlaceholderClient\README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReqRest.Examples.JsonPlaceholderClient", "JsonPlaceholderClient\ReqRest.Examples.JsonPlaceholderClient\ReqRest.Examples.JsonPlaceholderClient.csproj", "{738E7FF0-DE45-4D97-8A17-40B9F7197229}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReqRest.Examples.JsonPlaceholderClient.Tests", "JsonPlaceholderClient\ReqRest.Examples.JsonPlaceholderClient.Tests\ReqRest.Examples.JsonPlaceholderClient.Tests.csproj", "{AEDE9657-0D7F-49F9-9B53-C29D8CB92D40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{738E7FF0-DE45-4D97-8A17-40B9F7197229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{738E7FF0-DE45-4D97-8A17-40B9F7197229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{738E7FF0-DE45-4D97-8A17-40B9F7197229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{738E7FF0-DE45-4D97-8A17-40B9F7197229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEDE9657-0D7F-49F9-9B53-C29D8CB92D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEDE9657-0D7F-49F9-9B53-C29D8CB92D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEDE9657-0D7F-49F9-9B53-C29D8CB92D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEDE9657-0D7F-49F9-9B53-C29D8CB92D40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{738E7FF0-DE45-4D97-8A17-40B9F7197229} = {0702489A-6786-4BF3-BA7A-36BE99263D1D}
+		{AEDE9657-0D7F-49F9-9B53-C29D8CB92D40} = {0702489A-6786-4BF3-BA7A-36BE99263D1D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8B5C0FF-7EBC-4511-8073-A002B1C9BAB1}
+	EndGlobalSection
+EndGlobal
