@@ -25,7 +25,7 @@ endpoints:
 * `/users/{id}/albums`
 
 This project is also published on [NuGet](https://www.nuget.org/packages/ReqRest.Examples.JsonPlaceholderClient)
-and can be downloaded and used for learning how to use API clients written with the help of ReqRest. <br/>
+and can be downloaded and used for learning how to use API clients written with the help of ReqRest.
 In fact, the [Getting Started](https://reqrest.github.io/articles/getting-started) guide uses this
 client for teaching purposes.
 
