@@ -1,0 +1,79 @@
+trigger:
+- master
+
+name: $(SourceBranchName)_$(Date:yyyy-MM-dd)_$(Rev:.r)
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+variables:
+  BuildConfiguration: 'Release'
+
+steps:
+- task: DotNetCoreInstaller@1
+  displayName: 'Install .NET Core 3.0'
+  inputs:
+    packageType: 'sdk'
+    version: '3.0.x'
+
+# InheritDocTool requires .NET Core 2.1.
+- task: DotNetCoreInstaller@1
+  displayName: 'Install .NET Core 2.1'
+  inputs:
+    packageType: 'sdk'
+    version: '2.1.x'
+
+- script: dotnet tool install -g InheritDocTool
+  displayName: Install InheritDocTool
+
+- task: DotNetCoreCLI@2
+  displayName: 'Restore NuGet Packages'
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build'
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+    configuration: $(BuildConfiguration)
+
+- task: DotNetCoreCLI@2
+  displayName: 'Test'
+  inputs:
+    command: 'test'
+    projects: '**/*.csproj'
+    configuration: $(BuildConfiguration)
+    nobuild: true
+
+- script: InheritDoc -o
+  displayName: 'Run InheritDoc'
+  condition: succeeded()
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    configuration: $(BuildConfiguration)
+    nobuild: true
+    versioningScheme: 'off'
+  condition: |
+    and
+    (
+      succeeded(),
+      eq(variables['Build.SourceBranch'], 'refs/heads/master'),
+      eq(variables['system.pullrequest.isfork'], false)
+    )
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: $(Build.ArtifactStagingDirectory)
+    ArtifactName: 'Publish NuGet Artifacts'
+  condition: |
+    and
+    (
+      succeeded(),
+      eq(variables['Build.SourceBranch'], 'refs/heads/master'),
+      eq(variables['system.pullrequest.isfork'], false)
+    )
