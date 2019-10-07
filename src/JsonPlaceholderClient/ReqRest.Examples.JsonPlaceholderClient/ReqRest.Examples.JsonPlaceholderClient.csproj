@@ -18,8 +18,8 @@ The repository contains both the commented source code and information about wha
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ReqRest" Version="0.5.0" />
-    <PackageReference Include="ReqRest.Serializers.NewtonsoftJson" Version="0.5.0" />
+    <PackageReference Include="ReqRest" Version="0.6.0-alpha1" />
+    <PackageReference Include="ReqRest.Serializers.NewtonsoftJson" Version="0.6.0-alpha1" />
   </ItemGroup>
 
 </Project>

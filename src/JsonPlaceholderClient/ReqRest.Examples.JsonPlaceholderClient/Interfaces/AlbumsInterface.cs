@@ -10,7 +10,7 @@ namespace ReqRest.Examples.JsonPlaceholderClient.Interfaces
     public sealed class AlbumsInterface : MultiResourceRestInterface<Album>
     {
 
-        internal AlbumsInterface(RestClient restClient, IUrlProvider? baseUrlProvider = null)
+        internal AlbumsInterface(JsonPlaceholderClient restClient, IUrlProvider? baseUrlProvider = null)
             : base("albums", restClient, baseUrlProvider) { }
 
     }

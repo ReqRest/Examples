@@ -9,7 +9,7 @@
     public sealed class PostsInterface : MultiResourceRestInterface<Post>
     {
 
-        internal PostsInterface(RestClient restClient, IUrlProvider? baseUrlProvider = null)
+        internal PostsInterface(JsonPlaceholderClient restClient, IUrlProvider? baseUrlProvider = null)
             : base("posts", restClient, baseUrlProvider) { }
 
     }

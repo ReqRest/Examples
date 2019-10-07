@@ -10,7 +10,7 @@ namespace ReqRest.Examples.JsonPlaceholderClient.Interfaces
     public sealed class CommentsInterface : MultiResourceRestInterface<Comment>
     {
 
-        internal CommentsInterface(RestClient restClient, IUrlProvider? baseUrlProvider = null)
+        internal CommentsInterface(JsonPlaceholderClient restClient, IUrlProvider? baseUrlProvider = null)
             : base("comments", restClient, baseUrlProvider) { }
 
     }

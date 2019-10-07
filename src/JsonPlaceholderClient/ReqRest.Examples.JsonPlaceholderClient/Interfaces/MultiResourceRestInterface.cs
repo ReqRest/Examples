@@ -22,7 +22,7 @@
     /// <typeparam name="T">
     ///     The resource which is accessed by the interface.
     /// </typeparam>
-    public abstract class MultiResourceRestInterface<T> : RestInterface
+    public abstract class MultiResourceRestInterface<T> : RestInterface<JsonPlaceholderClient>
         where T : class
     {
 
@@ -35,7 +35,7 @@
         ///     The name of the interface itself which should get appended to the URL, e.g. "todos".
         /// </param>
         /// <param name="restClient">
-        ///     The <see cref="RestClient"/> which ultimately manages this interface.
+        ///     The <see cref="JsonPlaceholderClient"/> which ultimately manages this interface.
         /// </param>
         /// <param name="baseUrlProvider">
         ///     An <see cref="IUrlProvider"/> which is the logical parent of this interface.
@@ -45,7 +45,7 @@
         /// </param>
         public MultiResourceRestInterface(
             string interfaceName, 
-            RestClient restClient, 
+            JsonPlaceholderClient restClient, 
             IUrlProvider? baseUrlProvider = null)
             : base(restClient, baseUrlProvider)
         {
@@ -78,7 +78,7 @@
                 .Get()
                 .If(start != null, req => req.ConfigureRequestUri(url => url & ("_start", $"{start}"))) 
                 .If(limit != null, req => req.ConfigureRequestUri(url => url & ("_limit", $"{limit}"))) 
-                .Receive<IList<T>>().AsJson(StatusCode.Ok);
+                .Receive<IList<T>>().AsJson(Client.Configuration.JsonSerializerSettings, StatusCode.Ok);
         // Note: 
         // The .If(...) above is admittedly somewhat ugly.
         // In a larger code base, this would ideally be replaced with an extension method like this:
@@ -103,7 +103,7 @@
         public ApiRequest<T> Post(T? resource) =>
             BuildRequest()
                 .PostJson(resource)
-                .Receive<T>().AsJson(StatusCode.Created);
+                .Receive<T>().AsJson(Client.Configuration.JsonSerializerSettings, StatusCode.Created);
 
     }
 

@@ -10,7 +10,7 @@ namespace ReqRest.Examples.JsonPlaceholderClient.Interfaces
     public sealed class UsersInterface : MultiResourceRestInterface<User>
     {
 
-        internal UsersInterface(RestClient restClient, IUrlProvider? baseUrlProvider = null)
+        internal UsersInterface(JsonPlaceholderClient restClient, IUrlProvider? baseUrlProvider = null)
             : base("users", restClient, baseUrlProvider) { }
 
     }

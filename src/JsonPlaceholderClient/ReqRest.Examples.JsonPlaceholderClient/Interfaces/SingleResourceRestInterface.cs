@@ -20,7 +20,7 @@
     /// <typeparam name="T">
     ///     The resource which is accessed by the interface.
     /// </typeparam>
-    public abstract class SingleResourceRestInterface<T> : RestInterface
+    public abstract class SingleResourceRestInterface<T> : RestInterface<JsonPlaceholderClient>
         where T : class
     {
 
@@ -72,7 +72,7 @@
         public ApiRequest<T> Get() =>
             BuildRequest()
                 .Get()
-                .Receive<T>().AsJson(StatusCode.Ok);
+                .Receive<T>().AsJson(Client.Configuration.JsonSerializerSettings, StatusCode.Ok);
 
         /// <summary>
         ///     Creates a PUT request for replacing the resource with a new one.
@@ -83,7 +83,7 @@
         public ApiRequest<T> Put(T? newResource) =>
             BuildRequest()
                 .PutJson(newResource)
-                .Receive<T>().AsJson(StatusCode.Ok);
+                .Receive<T>().AsJson(Client.Configuration.JsonSerializerSettings, StatusCode.Ok);
 
         /// <summary>
         ///     Creates a PATCH request for replacing a selected set of the resource's values.
@@ -94,7 +94,7 @@
         public ApiRequest<T> Patch(T? newValues) =>
             BuildRequest()
                 .PatchJson(newValues)
-                .Receive<T>().AsJson(StatusCode.Ok);
+                .Receive<T>().AsJson(Client.Configuration.JsonSerializerSettings, StatusCode.Ok);
 
         /// <summary>
         ///     Creates a DELETE request for removing deleting the resource.

@@ -9,7 +9,7 @@
     public sealed class TodosInterface : MultiResourceRestInterface<TodoItem>
     {
 
-        internal TodosInterface(RestClient restClient, IUrlProvider? baseUrlProvider = null)
+        internal TodosInterface(JsonPlaceholderClient restClient, IUrlProvider? baseUrlProvider = null)
             : base("todos", restClient, baseUrlProvider) { }
 
     }

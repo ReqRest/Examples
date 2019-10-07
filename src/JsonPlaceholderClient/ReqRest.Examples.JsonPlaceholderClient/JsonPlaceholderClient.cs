@@ -8,10 +8,10 @@
     ///     An API client for the JSON Placeholder REST API which can be found at
     ///     https://jsonplaceholder.typicode.com.
     /// </summary>
-    public sealed class JsonPlaceholderClient : RestClient
+    public sealed class JsonPlaceholderClient : RestClient<JsonPlaceholderClientConfiguration>
     {
 
-        private static readonly RestClientConfiguration DefaultConfiguration = new RestClientConfiguration()
+        private static readonly JsonPlaceholderClientConfiguration DefaultConfiguration = new JsonPlaceholderClientConfiguration()
         {
             BaseUrl = new Uri("https://jsonplaceholder.typicode.com"),
         };
@@ -24,7 +24,7 @@
         ///     If this is <see langword="null"/>, a default configuration which accesses the
         ///     https://jsonplaceholder.typicode.com base URL is used instead.
         /// </param>
-        public JsonPlaceholderClient(RestClientConfiguration? configuration = null) 
+        public JsonPlaceholderClient(JsonPlaceholderClientConfiguration? configuration = null) 
             : base(configuration ?? DefaultConfiguration) { }
 
         /// <summary>
